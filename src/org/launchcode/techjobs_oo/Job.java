@@ -43,7 +43,16 @@ public class Job {
     public int hashCode() {
         return Objects.hash(getId());
     }
-
+    @Override
+    public String toString(){
+        if(this.name == null){
+            return "OOPS! This job does not seem to exist";
+        }else {
+            String returnString = "\nID: " + this.getId() + "\nName: " + this.getName() + "\nEmployer: " + this.getEmployer().toString() +
+                    "\nLocation: " + this.getLocation().toString() + "\nPosition Type: " + this.getPositionType().toString() + "\nCore Competency: " + this.getCoreCompetency().toString() + "\n";
+            return returnString;
+        }
+    }
     // TODO: Add getters for each field EXCEPT nextId. Add setters for each field EXCEPT nextID
     //  and id.
 
@@ -52,7 +61,11 @@ public class Job {
         return id;
     }
     public String getName() {
-        return name;
+       if(this.name.equals("")){
+           return "Data not available";
+       }else {
+           return name;
+       }
     }
 
     public void setName(String name) {
