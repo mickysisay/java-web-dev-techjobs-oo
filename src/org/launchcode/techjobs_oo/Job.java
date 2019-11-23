@@ -46,7 +46,7 @@ public class Job {
     @Override
     public String toString(){
         if(this.name == null){
-            return "OOPS! This job does not seem to exist";
+            return "\nOOPS! This job does not seem to exist\n";
         }else {
             String returnString = "\nID: " + this.getId() + "\nName: " + this.getName() + "\nEmployer: " + this.getEmployer().toString() +
                     "\nLocation: " + this.getLocation().toString() + "\nPosition Type: " + this.getPositionType().toString() + "\nCore Competency: " + this.getCoreCompetency().toString() + "\n";
