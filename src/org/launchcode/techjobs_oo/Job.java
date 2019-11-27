@@ -16,17 +16,18 @@ public class Job {
     // TODO: Add two constructors - one to initialize a unique ID and a second to initialize the
     //  other five fields. The second constructor should also call the first in order to initialize
     //  the 'id' field.
-    public Job(){
+    public Job() {
         this.id = nextId;
         this.nextId++;
     }
-    public Job(String aName,Employer aEmployer,Location aLocation,PositionType aPostionType,CoreCompetency aCoreCompetency){
+
+    public Job(String aName, Employer aEmployer, Location aLocation, PositionType aPostionType, CoreCompetency aCoreCompetency) {
         this();
         this.name = aName;
-        this.employer=aEmployer;
-        this.location=aLocation;
+        this.employer = aEmployer;
+        this.location = aLocation;
         this.positionType = aPostionType;
-        this.coreCompetency=aCoreCompetency;
+        this.coreCompetency = aCoreCompetency;
     }
     // TODO: Add custom equals and hashCode methods. Consider two Job objects "equal" when their id fields
     //  match.
@@ -43,11 +44,12 @@ public class Job {
     public int hashCode() {
         return Objects.hash(getId());
     }
+
     @Override
-    public String toString(){
-        if(this.name == null){
+    public String toString() {
+        if (this.name == null) {
             return "\nOOPS! This job does not seem to exist\n";
-        }else {
+        } else {
             String returnString = "\nID: " + this.getId() + "\nName: " + this.getName() + "\nEmployer: " + this.getEmployer().toString() +
                     "\nLocation: " + this.getLocation().toString() + "\nPosition Type: " + this.getPositionType().toString() + "\nCore Competency: " + this.getCoreCompetency().toString() + "\n";
             return returnString;
@@ -60,12 +62,13 @@ public class Job {
     public int getId() {
         return id;
     }
+
     public String getName() {
-       if(this.name.equals("")){
-           return "Data not available";
-       }else {
-           return name;
-       }
+        if (this.name.equals("")) {
+            return "Data not available";
+        } else {
+            return name;
+        }
     }
 
     public void setName(String name) {
